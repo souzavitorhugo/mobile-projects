@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 export default function App() {
   const [img, setImg] = useState(require('./assets/biscoito.png'));
   const [frase, setFrase] = useState('');
+  const [randomNumber, setRandomNumber] = useState(0);
 
   let frases = [
     'Siga os bons e aprenda com eles',
@@ -17,9 +18,9 @@ export default function App() {
   ];
 
   const quebraBiscoito = () => {
-    let randomNumber = Math.floor(Math.random() * frases.length);
-    setImg(require('./assets/biscoitoAberto.png'));
+    geraRandomNumber();
 
+    setImg(require('./assets/biscoitoAberto.png'));
     setFrase(`"${frases[randomNumber]}"` );
   }
 
@@ -27,6 +28,13 @@ export default function App() {
     setImg(require('./assets/biscoito.png'))
 
     setFrase(null);
+  }
+
+  const geraRandomNumber = () => {
+    let numeroGerado = Math.floor(Math.random() * frases.length);
+    if(randomNumber != numeroGerado) {
+      setRandomNumber(numeroGerado);
+    } else geraRandomNumber();
   }
 
   return (
