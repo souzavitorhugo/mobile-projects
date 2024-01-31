@@ -1,0 +1,1 @@
+Nesse repositório estão armazenados alguns projetos simples para plataformas mobile que foram feitos a nível inicial de estudo e prática dos conhecimentos adquiridos. Alguns deles foram inicializados em Reac Native puro, outros com Expo.
